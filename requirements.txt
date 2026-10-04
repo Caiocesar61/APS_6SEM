@@ -1,0 +1,15 @@
+# Python 3.9 a 3.12 (o mediapipe 0.10.21 nao tem versao para 3.13+)
+#
+# mediapipe precisa ficar abaixo de 0.10.30: a partir dessa versao a API
+# antiga "mp.solutions.hands", usada pelo mrm.py, foi removida.
+mediapipe==0.10.21
+
+# O mediapipe ja instala o opencv-contrib-python. NAO instale tambem o
+# "opencv-python": os dois pacotes brigam pelo modulo cv2.
+opencv-contrib-python>=4.8,<5
+
+# mediapipe 0.10.21 nao funciona com numpy 2.x
+numpy>=1.24,<2
+
+# Apenas para rodar os testes automaticos
+pytest>=7
